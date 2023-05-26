@@ -1,0 +1,37 @@
+#Random Password Generator 
+import random
+import string
+
+string.ascii_lowercase ='abcdefghijklmnopqrstuvwxyz'
+list_alpha = string.ascii_lowercase = 'abcdefghijklmnopqrstuvwxyz'
+list_num =[x for x in range(0,11)]
+list_symbols = ['!','#','$','&','(',')','*','+']
+
+print ('''
+
+            Wellcome to the random password generator 
+''')
+
+nr_alpha =int(input('How many letter would you like in your password?\n'))
+nr_num =int(input('How many numbers whould you like in your password?\n'))
+nr_sym=int(input('How many symbols would you like in your password?\n'))
+password = []
+
+for char in range(1, nr_alpha+1):
+  password.append(random.choice(list_alpha))
+
+for char in range(1, nr_num+1):
+  password += random.choice(str(list_num))
+
+for char in range(1, nr_sym+1):
+  password += random.choice(list_symbols)
+
+random.shuffle(password)
+
+pwd = ""
+for char in password:
+  pwd += char
+
+print(f"Your password is: {pwd}")
+
+
